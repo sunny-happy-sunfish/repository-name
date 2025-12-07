@@ -37,7 +37,7 @@ jobs:
         
       - name: Run bot
         run: |
-          python -u user_interface.py "tournament M8cEHZxE" &
+          python -u user_interface.py matchmaking &
           PID=$!
           # Auto-exit before GitHub 6h limit
           ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
