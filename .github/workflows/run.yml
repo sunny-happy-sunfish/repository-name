@@ -48,4 +48,4 @@ jobs:
         if: always()
         run: gh workflow run run.yml
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
