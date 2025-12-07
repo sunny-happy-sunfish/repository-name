@@ -1,0 +1,298 @@
+token: "litoken_idk"  # Lichess OAuth2 Token.
+
+engines:
+  standard:
+    dir: "./engines"
+    name: "stockfish.exe"
+    ponder: true
+    silence_stderr: false
+    move_overhead_multiplier: 22.5
+    uci_options:
+      Threads: 4
+      Hash: 1024
+      Move Overhead: 100
+    limits:
+      # time: 20.0
+      # depth: 50
+      # nodes: 8000000
+
+  variants:
+    dir: "./engines"
+    name: "fairysf"
+    ponder: true
+    silence_stderr: false
+    move_overhead_multiplier: 1.0
+    uci_options:
+      Threads: 4
+      Hash: 1024
+      Move Overhead: 240
+      Use NNUE: true
+      EvalFile: "3check-cb5f517c228b.nnue:antichess-dd3cbe53cd4e.nnue:atomic-2cf13ff256cc.nnue:crazyhouse-8ebf84784ad2.nnue:horde-28173ddccabe.nnue:kingofthehill-978b86d0e6a4.nnue:racingkings-636b95f085e3.nnue"
+    limits:
+     # time: 20.0
+     # depth: 50
+     # nodes: 5000000
+  chess960:
+    dir: "./engines"
+    name: "stockfish"
+    ponder: true
+    silence_stderr: false
+    move_overhead_multiplier: 22.5
+    uci_options:
+      Threads: 4
+      Hash: 1024
+      Move Overhead: 100
+    limits:
+      # time: 20.0
+      # depth: 50
+      # nodes: 8000000
+
+syzygy:
+  standard:
+    enabled: true
+    paths:
+      - "./engines/syzygy"
+    max_pieces: 7
+    instant_play: true
+  antichess:
+    enabled: false
+    paths:
+      - "/path/to/antichess/syzygy"
+    max_pieces: 6
+    instant_play: true
+  atomic:
+    enabled: false
+    paths:
+      - "/path/to/atomic/syzygy"
+    max_pieces: 6
+    instant_play: true
+
+gaviota:
+  enabled: false
+  paths:
+    - "/path/to/gaviota"
+  max_pieces: 5
+
+opening_books:
+  enabled: true
+  priority: 900
+  books:
+#   standard:
+#     selection: weighted_random          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
+#     max_depth: 16                       # Half move max depth. (Comment this line for max depth)
+#     names:                              # List of names of books to use if there is no specific book for the time control, white, black or chess960
+#       - DefaultBook    
+    standard_black:
+      selection: best_move 
+      allow_repetitions: true
+      names:
+        - book
+        - Black
+    standard_white:
+      selection: best_move
+      allow_repetitions: true
+      names:
+        - book
+        - White
+        - Black
+        - Optimus
+    standard_human: 
+      selection: best_move 
+      allow_repetitions: false
+      names: 
+        - Torma
+        - Titans
+    antichess_black:
+      selection: best_move
+      allow_repetitions: true   
+      names: 
+        - anti
+    horde_white:
+      selection: best_move
+      allow_repetitions: true   
+      names: 
+        - horde
+    horde_black:
+      selection: best_move
+      allow_repetitions: true   
+      names:
+        - fghhorde
+    chess960:
+      selection: best_move
+      allow_repetitions: true 
+      names:
+        - chess960 
+        - 960
+    antichess_white:
+      selection: best_move
+      allow_repetitions: false
+      names:
+        - realanti
+        - anti
+    
+
+online_moves:
+  opening_explorer:
+    enabled: true
+    priority: 300
+    only_without_book: false
+    use_for_variants: false
+    min_time: 20
+    timeout: 2
+    min_games: 10
+    only_with_wins: true
+    selection: "win_rate"
+    anti: true
+    player: NimsiluBot
+    allow_repetitions: false
+    trust_eval: true
+    # max_depth: 20
+
+  lichess_cloud:
+    enabled: true
+    priority: 200
+    only_without_book: true
+    min_eval_depth: 20
+    min_time: 10
+    timeout: 2
+    use_for_variants: false
+    allow_repetitions: false
+    trust_eval: true
+    # max_depth: 30
+
+  chessdb:
+    enabled: true                     # Activate online moves from https://chessdb.cn/queryc_en/
+    priority: 250                        # Priority with which this move source is used. Higher priority is used first.
+    only_without_book: false              # Whether the chessdb should only be used if there is no matching book.
+   # min_candidates: 5                     # Minimum number of candidate moves.
+    min_time: 20                          # Time the bot must have at least to use the online move. +10 seconds in games without increment.
+    timeout: 2                            # Time the server has to respond.
+    best_move: false
+    allow_repetitions: true 
+    trust_eval: true # Move selection is one of "optimal", "best" or "good".
+    #max_depth: 30
+    
+  online_egtb:
+    enabled: true
+    min_time: 20
+    timeout: 3
+
+offer_draw:
+  enabled: true
+  score: 10
+  consecutive_moves: 3
+  min_game_length: 30
+  against_humans: false
+#  min_rating: 3000
+
+resign:
+  enabled: true
+  score: -1000
+  consecutive_moves: 9
+  against_humans: false
+  min_rating: 3000
+
+challenge:
+  concurrency: 1
+  max_takebacks: 300000      
+  bullet_with_increment_only: false   
+# min_initial: 60
+  variants:
+    - standard
+    - chess960
+    - fromPosition
+    - antichess
+    - atomic
+    - crazyhouse
+    - horde
+    - kingOfTheHill
+    - racingKings
+    - threeCheck
+  bot_time_controls:
+    - bullet
+    - blitz
+    - rapid
+  # - classical
+  human_time_controls:
+    - blitz
+    - rapid
+    - bullet
+  bot_modes:
+    - casual
+    - rated
+  human_modes:
+    - casual
+    - rated
+
+matchmaking:
+  delay: 10
+  timeout: 15
+  selection: cyclic
+  types:
+    anti:
+      tc: 0.75+0
+      variant: antichess
+ #     rated: false
+    frc:
+      tc: 0.5+0
+      variant: chess960
+    horde:
+      tc: 0.75+0
+      variant: horde
+    blitz:
+      tc: 3+0
+    rapid:
+      tc: 8+0
+    bulle:
+      tc: 0.5+0
+ #     rated: false
+ #   atoms:
+ #    tc: 1+0
+ #     variant: atomic
+ #     rated: false
+ #   rapid:
+ #    tc: 10+5
+ #   blitz:
+ #     tc: 5+3
+  #  classical:
+   #   tc: 15+15
+#   bullet:
+#      tc: 0.5+0
+#      rated: true
+#    other:
+#      tc: 1+0
+#    blitz:
+#      tc: 3+0
+    
+messages:
+  greeting: "Hi {opponent}! Type !help for a list of available commands. GLHF!"
+  goodbye: "GG! Thanks for the game!"
+  greeting_spectators: "Hi! Type !help for a list of available commands. Hope you enjoy the game!"
+  goodbye_spectators: "Thanks for watching!"
+
+whitelist:
+  - KlepitsaM
+blacklist: 
+  - Legend_of_chess995
+  - HakoAI
+  - ZeusNet
+  - MDBOT
+online_blacklists:
+#  - 
+
+books:
+  Torma: "./engines/Torma.bin"
+  Optimus: "./engines/OPTIMUS2502.bin"
+  Black: "./engines/Optical.bin"
+  Win: "./engines/win.bin"
+  White: "./engines/white.bin"
+  Titans: "./engines/Titans.bin"
+  book: "./engines/terimakichud.bin"
+  lila: "./engines/lila.bin"
+  lilawhite: "./engines/lilawhite.bin"
+  anti: "./engines/anti_book.bin"
+  horde: "./engines/horde_book_white.bin"
+  fghhorde: "./engines/horde_book_black.bin"
+  chess960: "./engines/chess960.bin"
+  960: "./engines/randomchess.bin"
+  realanti: "./engines/anti.bin"
