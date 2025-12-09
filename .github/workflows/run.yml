@@ -25,7 +25,7 @@ jobs:
         run: pip install -r requirements.txt
         
       - name: Token
-        run: sed -i "s/litoken_idk/${{ secrets.TOKEN }}/g" config.yml
+        run: sed -i "s/litoken_idk/${{ secrets.TOKEN2 }}/g" config.yml
 
       - name: get sf
         run: |
@@ -43,7 +43,7 @@ jobs:
           python -u user_interface.py &
           PID=$!
           # abc
-          ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
+          ( sleep 20 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
           wait $PID
           echo "Bot ended cleanly."
 
@@ -91,12 +91,6 @@ jobs:
           python -u user_interface.py &
           PID=$!
           # abc
-          ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
+          ( sleep 30 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
           wait $PID
           echo "Bot ended cleanly."
-
-      - name: Self-restart
-        if: always()
-        run: gh workflow run run.yml
-        env:
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
