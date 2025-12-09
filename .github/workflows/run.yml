@@ -43,7 +43,7 @@ jobs:
           python -u user_interface.py &
           PID=$!
           # abc
-          ( sleep 20 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
+          ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
           wait $PID
           echo "Bot ended cleanly."
 
@@ -91,6 +91,6 @@ jobs:
           python -u user_interface.py &
           PID=$!
           # abc
-          ( sleep 30 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
+          ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
           wait $PID
           echo "Bot ended cleanly."
