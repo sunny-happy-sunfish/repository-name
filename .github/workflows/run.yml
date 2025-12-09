@@ -39,7 +39,7 @@ jobs:
         run: |
           python -u user_interface.py matchmaking &
           PID=$!
-          # Auto-exit before GitHub 6h limit
+          # abc
           ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
           wait $PID
           echo "Bot ended cleanly."
