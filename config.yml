@@ -222,7 +222,7 @@ challenge:
     - rated
   human_modes:
     - casual
-    - rated
+#    - rated
 
 matchmaking:
   delay: 10
