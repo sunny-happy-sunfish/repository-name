@@ -20,8 +20,8 @@ jobs:
           rsync -av --include='*/' --include='*.py' --exclude='*' BotLi/ ./
       - name: Configure git
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-action"
+          git config --global user.email "action@github.com"
       - name: Commit changes
         run: |
           git add -u
