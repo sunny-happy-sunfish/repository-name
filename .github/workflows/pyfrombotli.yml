@@ -26,7 +26,7 @@ jobs:
         run: |
           git add -u
           git add *.py || true
-          git commit -m "Sync .py files from Torom/BotLi" || echo "No changes to commit"
+          git commit -m "Copy .py files from BotLi" || echo "No changes to commit"
       - name: Pull remote changes (avoid rejected push)
         run: |
           git pull --rebase origin main || true
