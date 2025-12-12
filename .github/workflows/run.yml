@@ -95,6 +95,12 @@ jobs:
           wait $PID
           echo "Bot ended cleanly."
 
+      - name: Self-restart
+        if: fail()
+        run: gh workflow run run.yml
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+
   run-abdce:
     concurrency:
       group: abdce
@@ -135,3 +141,9 @@ jobs:
           ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
           wait $PID
           echo "Bot ended cleanly."
+
+      - name: Self-restart
+        if: fail()
+        run: gh workflow run run.yml
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
