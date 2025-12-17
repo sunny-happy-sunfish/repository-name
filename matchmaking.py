@@ -61,8 +61,20 @@ class Matchmaking:
                 return ChallengeResponse(no_opponent=True)
 
             return
-
-        opponent, color = next_opponent
+        if self.current_type.name == 'h':
+            opponent, color = next_opponent
+            if random.randint(1, 7) != 7:
+                color = 'black'
+            else:
+                color = 'white'
+        elif self.current_type.name == 'a':
+            opponent, color = next_opponent
+            if random.randint(1, 7) != 7:
+                color = 'white'
+            else:
+                color = 'black'
+        else:
+            opponent, color = next_opponent
 
         match await self._get_busy_reason(opponent):
             case BusyReason.PLAYING:
