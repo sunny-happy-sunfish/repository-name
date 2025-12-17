@@ -229,14 +229,14 @@ matchmaking:
   timeout: 15
   selection: cyclic
   types:
-    anti:
+    a:
       tc: 0.75+0
       variant: antichess
  #     rated: false
     frc:
       tc: 0.5+0
       variant: chess960
-    horde:
+    h:
       tc: 0.75+0
       variant: horde
     bullet:
