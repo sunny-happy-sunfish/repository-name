@@ -129,7 +129,11 @@ opening_books:
       names:
         - realanti
         - anti
-    
+    racingkings:
+      selection: best_move
+      allow_repetitions: true
+      names:
+        - racing
 
 online_moves:
   opening_explorer:
@@ -314,3 +318,4 @@ books:
   chess960: "./engines/chess960.bin"
   960: "./engines/randomchess.bin"
   realanti: "./engines/anti.bin"
+  racing: "./engines/racingkings_book.bin"
