@@ -40,7 +40,7 @@ jobs:
         
       - name: Run bot
         run: |
-          python -u user_interface.py matchmaking &
+          python -u user_interface.py "matchmaking" "join lichess-racing-kings" "tournament bQg4h0jx" &
           PID=$!
           # abc
           ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
@@ -87,7 +87,7 @@ jobs:
         
       - name: Run bot
         run: |
-          python -u user_interface.py matchmaking &
+          python -u user_interface.py "matchmaking" "join lichess-racing-kings" "tournament bQg4h0jx" &
           PID=$!
           # abc
           ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
@@ -134,7 +134,7 @@ jobs:
         
       - name: Run bot
         run: |
-          python -u user_interface.py matchmaking &
+          python -u user_interface.py "matchmaking" "join lichess-racing-kings" "tournament bQg4h0jx" &
           PID=$!
           # abc
           ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
@@ -181,7 +181,7 @@ jobs:
         
       - name: Run bot
         run: |
-          python user_interface.py matchmaking &
+          python user_interface.py "matchmaking" "join lichess-racing-kings" "tournament bQg4h0jx" &
           PID=$!
           # abc
           ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
