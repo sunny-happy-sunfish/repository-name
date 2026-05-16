@@ -28,12 +28,15 @@ jobs:
         run: sed -i "s/litoken_idk/${{ secrets.TOKEN4 }}/g" config.yml
 
       - name: get sf
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           curl -sSL https://raw.githubusercontent.com/sunny-happy-sunfish /stockfish-downloader/main/posix_helper.sh | sh -s
           tar -xf stockfish-*.tar
           rm stockfish-*.tar
           mv -f stockfish/stockfish-* engines/stockfish
           rm -r stockfish
+
         
       - name: chmod
         run: chmod +x ./engines/stockfish ./engines/fairysf
