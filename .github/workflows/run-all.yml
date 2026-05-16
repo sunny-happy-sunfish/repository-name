@@ -29,7 +29,7 @@ jobs:
 
       - name: get sf
         run: |
-          curl -sSL https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
+          curl -v https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
           tar -xf stockfish-*.tar
           rm stockfish-*.tar
           mv -f stockfish/stockfish-* engines/stockfish
@@ -76,7 +76,7 @@ jobs:
 
       - name: get sf
         run: |
-          curl -sSL https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
+          curl -v https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
           tar -xf stockfish-*.tar
           rm stockfish-*.tar
           mv -f stockfish/stockfish-* engines/stockfish
@@ -123,7 +123,7 @@ jobs:
 
       - name: get sf
         run: |
-          curl -sSL https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
+          curl -v https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
           tar -xf stockfish-*.tar
           rm stockfish-*.tar
           mv -f stockfish/stockfish-* engines/stockfish
@@ -170,7 +170,7 @@ jobs:
 
       - name: get sf
         run: |
-          curl -sSL https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
+          curl -v https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
           tar -xf stockfish-*.tar
           rm stockfish-*.tar
           mv -f stockfish/stockfish-* engines/stockfish
