@@ -31,9 +31,9 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl -sSL https://raw.githubusercontent.com/sunny-happy-sunfish /stockfish-downloader/main/posix_helper.sh | sh -s
-          tar -xf stockfish-*.tar
-          rm stockfish-*.tar
+          curl -sSL https://raw.githubusercontent.com/sunny-happy-sunfish/stockfish-downloader/main/posix_helper.sh | sh -s
+          tar -xf stockfish-*.tar.gz
+          rm stockfish-*.tar.gz
           mv -f stockfish/stockfish-* engines/stockfish
           rm -r stockfish
 
@@ -80,8 +80,8 @@ jobs:
       - name: get sf
         run: |
           curl -sSL https://raw.githubusercontent.com/sunny-happy-sunfish/stockfish-downloader/main/posix_helper.sh | sh -s
-          tar -xf stockfish-*.tar
-          rm stockfish-*.tar
+          tar -xf stockfish-*.tar.gz
+          rm stockfish-*.tar.gz
           mv -f stockfish/stockfish-* engines/stockfish
           rm -r stockfish
         
@@ -127,8 +127,8 @@ jobs:
       - name: get sf
         run: |
           curl -sSL https://raw.githubusercontent.com/sunny-happy-sunfish/stockfish-downloader/main/posix_helper.sh | sh -s
-          tar -xf stockfish-*.tar
-          rm stockfish-*.tar
+          tar -xf stockfish-*.tar.gz
+          rm stockfish-*.tar.gz
           mv -f stockfish/stockfish-* engines/stockfish
           rm -r stockfish
         
@@ -174,8 +174,8 @@ jobs:
       - name: get sf
         run: |
           curl -sSL https://raw.githubusercontent.com/sunny-happy-sunfish/stockfish-downloader/main/posix_helper.sh | sh -s
-          tar -xf stockfish-*.tar
-          rm stockfish-*.tar
+          tar -xf stockfish-*.tar.gz
+          rm stockfish-*.tar.gz
           mv -f stockfish/stockfish-* engines/stockfish
           rm -r stockfish
         
