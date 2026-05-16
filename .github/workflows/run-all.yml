@@ -29,7 +29,7 @@ jobs:
 
       - name: get sf
         run: |
-          curl -sSL https://raw.githubusercontent.com/ppigazzini/stockfish-downloader/main/posix_helper.sh | sh -s
+          curl -sSL https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
           tar -xf stockfish-*.tar
           rm stockfish-*.tar
           mv -f stockfish/stockfish-* engines/stockfish
@@ -40,7 +40,7 @@ jobs:
         
       - name: Run bot
         run: |
-          python -u user_interface.py "matchmaking" "join lichess-bots" "tournament 9FwigmFy lichess-bots" &
+          python -u user_interface.py "join lichess-bots" "tournament mn56qwMw ygHYfInY" &
           PID=$!
           # abc
           ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
@@ -76,7 +76,7 @@ jobs:
 
       - name: get sf
         run: |
-          curl -sSL https://raw.githubusercontent.com/ppigazzini/stockfish-downloader/main/posix_helper.sh | sh -s
+          curl -sSL https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
           tar -xf stockfish-*.tar
           rm stockfish-*.tar
           mv -f stockfish/stockfish-* engines/stockfish
@@ -87,7 +87,7 @@ jobs:
         
       - name: Run bot
         run: |
-          python -u user_interface.py "matchmaking" "join lichess-bots" "tournament 9FwigmFy lichess-bots" &
+          python -u user_interface.py "join lichess-bots" "tournament mn56qwMw ygHYfInY" &
           PID=$!
           # abc
           ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
@@ -123,7 +123,7 @@ jobs:
 
       - name: get sf
         run: |
-          curl -sSL https://raw.githubusercontent.com/ppigazzini/stockfish-downloader/main/posix_helper.sh | sh -s
+          curl -sSL https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
           tar -xf stockfish-*.tar
           rm stockfish-*.tar
           mv -f stockfish/stockfish-* engines/stockfish
@@ -134,7 +134,7 @@ jobs:
         
       - name: Run bot
         run: |
-          python -u user_interface.py "matchmaking" "join lichess-bots" "tournament 9FwigmFy lichess-bots" &
+          python -u user_interface.py "join lichess-bots" "tournament mn56qwMw ygHYfInY" &
           PID=$!
           # abc
           ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
@@ -170,7 +170,7 @@ jobs:
 
       - name: get sf
         run: |
-          curl -sSL https://raw.githubusercontent.com/ppigazzini/stockfish-downloader/main/posix_helper.sh | sh -s
+          curl -sSL https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
           tar -xf stockfish-*.tar
           rm stockfish-*.tar
           mv -f stockfish/stockfish-* engines/stockfish
@@ -181,7 +181,7 @@ jobs:
         
       - name: Run bot
         run: |
-          python user_interface.py "matchmaking" "join lichess-bots" "tournament 9FwigmFy lichess-bots" &
+          python user_interface.py "join lichess-bots" "tournament mn56qwMw ygHYfInY" &
           PID=$!
           # abc
           ( sleep 20100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
