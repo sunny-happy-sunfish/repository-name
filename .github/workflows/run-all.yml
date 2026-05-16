@@ -29,10 +29,10 @@ jobs:
 
       - name: get sf
         run: |
-          curl -v https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
-          tar -xf stockfish-*.tar.gz
-          rm stockfish-*.tar.gz
-          mv -f stockfish/stockfish-* engines/stockfish
+          curl https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
+          tar -xf stockfish-linux-x86-64-universal.tar.gz
+          rm stockfish-linux-x86-64-universal.tar.gz
+          mv -f stockfish/stockfish-linux-x86-64-universal engines/stockfish
           rm -r stockfish
         
       - name: chmod
@@ -76,10 +76,10 @@ jobs:
 
       - name: get sf
         run: |
-          curl -v https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
-          tar -xf stockfish-*.tar.gz
-          rm stockfish-*.tar.gz
-          mv -f stockfish/stockfish-* engines/stockfish
+          curl https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
+          tar -xf stockfish-linux-x86-64-universal.tar.gz
+          rm stockfish-linux-x86-64-universal.tar.gz
+          mv -f stockfish/stockfish-linux-x86-64-universal engines/stockfish
           rm -r stockfish
         
       - name: chmod
@@ -123,10 +123,10 @@ jobs:
 
       - name: get sf
         run: |
-          curl -v https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
-          tar -xf stockfish-*.tar.gz
-          rm stockfish-*.tar.gz
-          mv -f stockfish/stockfish-* engines/stockfish
+          curl https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
+          tar -xf stockfish-linux-x86-64-universal.tar.gz
+          rm stockfish-linux-x86-64-universal.tar.gz
+          mv -f stockfish/stockfish-linux-x86-64-universal engines/stockfish
           rm -r stockfish
         
       - name: chmod
@@ -170,10 +170,10 @@ jobs:
 
       - name: get sf
         run: |
-          curl -v https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
-          tar -xf stockfish-*.tar.gz
-          rm stockfish-*.tar.gz
-          mv -f stockfish/stockfish-* engines/stockfish
+          curl https://github.com/official-stockfish/Stockfish/releases/download/stockfish-dev-20260510-dd321af5/stockfish-linux-x86-64-universal.tar.gz
+          tar -xf stockfish-linux-x86-64-universal.tar.gz
+          rm stockfish-linux-x86-64-universal.tar.gz
+          mv -f stockfish/stockfish-linux-x86-64-universal engines/stockfish
           rm -r stockfish
         
       - name: chmod
