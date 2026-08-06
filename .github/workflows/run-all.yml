@@ -43,7 +43,7 @@ jobs:
         
       - name: Run bot
         run: |
-          python -u user_interface.py "matchmaking" "join lichess-bots" "tournament ebW5kaKl lichess-bots" &
+          python -u user_interface.py "matchmaking" "join lichess-bots" "tournament Cifn5Q00" &
           PID=$!
           # abc
           ( sleep 17100 && echo "Time up. Killing bot..." && kill -SIGTERM $PID ) &
